@@ -1,36 +1,49 @@
 ﻿// StringPainting_Demo_v0.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
-//
+
+// 第一次运行时，请先取消（1）行 的注释，注释（2）行，运行，在选定文件夹生成采样图片
+// 第一次运行完后，将宏 TOTAL_FRAME_COUNT 改为第一次运行时显示的总帧数
+// 第一次运行完后，请注释（1）行，取消（2）行注释
 
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include "Img.h"
 
+#define TOTAL_FRAME_COUNT 1306
+#define FLAG_PRINTCHAR_TYPE 1
+
 int main()
 {
 	std::cout << "Hello, world from OpenCV" << std::endl;
-	Mat test = cv::imread("C:/Users/zhr20/Pictures/testPictures/P5.jpg");
-	//imshow("input", test);
-
 	Img p1;
-	//p1.getFrame_01();
 
-	//p1.ikun_02();
+	//例1：鸡哥
+	/*
+	//p1.getFrame("C:/Users/zhr20/Pictures/testPictures/ikun.mp4", "C:/Users/zhr20/Pictures/testPictures/ikun", "ikun", "jpg"); //（1）
+
+	Mat test = cv::imread("C:/Users/zhr20/Pictures/testPictures/P5.jpg");
 	p1.zip_equal(test, 8);
 	p1.outputStringPainting(test, 24);
 	waitKey(500);
 	system("cls");
-	p1.ikun_04();
+
+	p1.picturesToStringPaintings("C:/Users/zhr20/Pictures/testPictures/ikun", "ikun", "jpg", TOTAL_FRAME_COUNT); //（2）
 	waitKey(0);
+	*/
+
+	//例2：香蕉君
+	
+	//p1.getFrame("C:/Users/zhr20/Pictures/testPictures/banana.mp4", "C:/Users/zhr20/Pictures/testPictures/banana", "banana", "jpg"); //（1）
+	p1.picturesToStringPaintings("C:/Users/zhr20/Pictures/testPictures/banana", "banana", "jpg", TOTAL_FRAME_COUNT, FLAG_PRINTCHAR_TYPE); //（2）
+	waitKey(0);
+	
+	
+	//例3：Bad Apple
+	//p1.getFrame("C:/Users/zhr20/Pictures/testPictures/BadApple.mp4", "C:/Users/zhr20/Pictures/testPictures/BadApple", "BadApple", "jpg"); //（1）
+	//p1.picturesToStringPaintings("C:/Users/zhr20/Pictures/testPictures/BadApple", "BadApple", "jpg", TOTAL_FRAME_COUNT, FLAG_PRINTCHAR_TYPE); //（2）
+	//waitKey(0);
+
+
+	
 	return 0;
 }
 
-// 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
-// 调试程序: F5 或调试 >“开始调试”菜单
-
-// 入门使用技巧: 
-//   1. 使用解决方案资源管理器窗口添加/管理文件
-//   2. 使用团队资源管理器窗口连接到源代码管理
-//   3. 使用输出窗口查看生成输出和其他消息
-//   4. 使用错误列表窗口查看错误
-//   5. 转到“项目”>“添加新项”以创建新的代码文件，或转到“项目”>“添加现有项”以将现有代码文件添加到项目
-//   6. 将来，若要再次打开此项目，请转到“文件”>“打开”>“项目”并选择 .sln 文件
